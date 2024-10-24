@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento Diário - Saúde e Fitness</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Monitoramento Diário</h1>
+
+        <!-- Seção de formulário de entrada -->
+        <div class="questionnaire">
+            <h2>Atualize suas informações</h2>
+            <form id="questionnaire-form">
+                <label for="weight">Peso (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+
+                <label for="height">Altura (cm):</label>
+                <input type="number" id="height" name="height" required>
+
+                <label for="waist">Medida da Cintura (cm):</label>
+                <input type="number" id="waist" name="waist" required>
+
+                <label for="water">Água Bebida (litros):</label>
+                <input type="number" step="0.1" id="water" name="water" required>
+
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+
+        <!-- Seção onde aparecerão os dados salvos -->
+        <div class="data-display">
+            <h2>Histórico da Semana</h2>
+            <div id="history-container">
+                <!-- Questionários respondidos serão adicionados aqui -->
+            </div>
+            <button id="add-new" class="add-btn">+</button>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>

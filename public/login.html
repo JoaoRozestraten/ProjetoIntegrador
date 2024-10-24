@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <button type="submit">Entrar</button>
+    </form>
+
+    <!-- Div para exibir a mensagem de erro ou sucesso -->
+    <div id="message"></div>
+    <a href="register.html" class= "btn-login">Voltar para Registar</a>
+
+        <script>
+    document.getElementById('loginForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Impede o comportamento padrão do formulário
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Fazendo a requisição para o servidor
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                username: username,
+                password: password
+            })
+        });
+
+        const result = await response.json(); // Captura a resposta JSON do servidor
+        const messageDiv = document.getElementById('message'); // Local para exibir a mensagem
+        
+        if (result.success) {
+            // Mensagem de sucesso
+            messageDiv.style.color = 'green';
+            messageDiv.innerText = result.message;
+            // Redireciona para a página qst.html
+            window.location.href = result.redirectUrl;
+        } else {
+            // Exibir a mensagem de erro
+            messageDiv.style.color = 'red';
+            messageDiv.innerText = result.message;
+        }
+    });
+</script>
+</body>
+</html>
+
