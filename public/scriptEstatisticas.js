@@ -1,39 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const ctx = document.getElementById('statsChart').getContext('2d');
+    const weightCtx = document.getElementById('weightChart').getContext('2d');
+    const waterCtx = document.getElementById('waterChart').getContext('2d');
 
     // Função para obter o histórico do usuário
     function loadHistory() {
         fetch('/history')
             .then(response => response.json())
             .then(data => {
-                // Extrai os dados para os rótulos e cada variável
                 const labels = data.map((_, index) => `Dia ${index + 1}`);
                 const weights = data.map(entry => entry.weight);
                 const waterIntake = data.map(entry => entry.water);
 
-                // Cria o gráfico usando Chart.js
-                new Chart(ctx, {
+                // Gráfico de Peso
+                new Chart(weightCtx, {
                     type: 'line',
                     data: {
                         labels: labels,
-                        datasets: [
-                            {
-                                label: 'Peso (kg)',
-                                data: weights,
-                                backgroundColor: 'rgba(255, 159, 64, 0.2)', // Fundo laranja claro
-                                borderColor: 'rgba(255, 159, 64, 1)',      // Borda laranja
-                                borderWidth: 1,
-                                fill: true
-                            },
-                            {
-                                label: 'Água Bebida (litros)',
-                                data: waterIntake,
-                                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Fundo azul claro
-                                borderColor: 'rgba(54, 162, 235, 1)',       // Borda azul
-                                borderWidth: 1,
-                                fill: true
-                            }
-                        ]
+                        datasets: [{
+                            label: 'Peso (kg)',
+                            data: weights,
+                            backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                            borderColor: 'rgba(255, 159, 64, 1)',
+                            borderWidth: 1,
+                            fill: true
+                        }]
                     },
                     options: {
                         scales: {
@@ -41,7 +31,40 @@ document.addEventListener('DOMContentLoaded', () => {
                                 beginAtZero: false,
                                 title: {
                                     display: true,
-                                    text: 'Valores'
+                                    text: 'Peso (kg)'
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Dias'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Gráfico de Hidratação
+                new Chart(waterCtx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Hidratação (litros)',
+                            data: waterIntake,
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                title: {
+                                    display: true,
+                                    text: 'Litros'
                                 }
                             },
                             x: {

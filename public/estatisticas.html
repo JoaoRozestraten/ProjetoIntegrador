@@ -4,22 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estatísticas - Saúde e Fitness</title>
+    <style>
+        .chart-container {
+            width: 300px; /* Reduz o tamanho do gráfico */
+            margin: 0 auto; /* Centraliza o gráfico */
+            display: inline-block; /* Permite que os gráficos fiquem lado a lado */
+        }
+    </style>
 </head>
 <body>
     <div id="header">
-        <h1>Estatisticas e Metas</h1>
+        <h1>Estatísticas e Metas</h1>
     </div>
-    <p></p>
     <div id="button">
-        <a href="qst.html" class="btn-login">Monitoramento Diario</a>
+        <a href="qst.html" class="btn-login">Monitoramento Diário</a>
         <a href="sobre.html" class="btn-login">Sobre</a>
     </div>
     <footer>
-        <p> 2024 Nome do Site</p>
-        <p> Estatisticas e Metas</p>
+        <p>2024 Nome do Site</p>
+        <p>Estatísticas e Metas</p>
     </footer>
+
     <h1>Estatísticas</h1>
-    <canvas id="statsChart" width="400" height="200"></canvas>
+    <div class="chart-container">
+        <canvas id="weightChart" width="300" height="150"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="waterChart" width="300" height="150"></canvas>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="scriptEstatisticas.js"></script>
 </body>
