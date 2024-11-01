@@ -73,6 +73,38 @@ app.get('/logout', (req, res) => {
         res.redirect('/'); // Redireciona para a página principal após logout
     });
 });
+// Rota para definir a meta de peso
+app.post('/set-goal', (req, res) => {
+    if (!req.session.username) return res.status(403).json({ message: 'Faça login.' });
+
+    const { goal } = req.body;
+    const user = users.find(user => user.username === req.session.username);
+
+    if (user) {
+        if (goal >= 60 && goal <= 100) {  // Verifica se o peso está dentro do intervalo
+            user.goal = goal;
+            res.json({ success: true, goal });
+        } else {
+            res.status(400).json({ success: false, message: 'Meta fora do intervalo permitido (60 a 100 kg).' });
+        }
+    } else {
+        res.status(404).json({ message: 'Usuário não encontrado.' });
+    }
+});
+
+
+// Rota para obter a meta atual do usuário
+app.get('/current-goal', (req, res) => {
+    if (!req.session.username) return res.status(403).json({ message: 'Faça login.' });
+
+    const user = users.find(user => user.username === req.session.username);
+
+    if (user && user.goal) {
+        res.json({ success: true, goal: user.goal });
+    } else {
+        res.json({ success: false, message: 'Meta não definida' });
+    }
+});
 
 // Rota para salvar dados do questionário
 app.post('/save', (req, res) => {

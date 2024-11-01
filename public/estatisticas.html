@@ -5,59 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estatísticas - Saúde e Fitness</title>
     <style>
-        /* Estilo do layout geral */
-        .content-container {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-        
-        /* Estilo dos gráficos */
         .chart-container {
             width: 300px;
             margin: 0 auto;
             display: inline-block;
         }
-
-        /* Estilo para os filtros de porcentagem */
-        .filter-container {
-            width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .filter-container select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
-        /* Estilo para a seção dos planos */
-        .plan-container {
+        .goal-container {
             margin-top: 20px;
-            padding: 10px;
+            text-align: center;
         }
-
-        .plan {
-            margin-bottom: 30px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .goal-text {
+            color: red;
+            font-size: 1.2em;
         }
-
-        .plan h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .plan p {
-            margin: 5px 0;
-        }
-
     </style>
 </head>
 <body>
@@ -69,33 +29,17 @@
         <a href="sobre.html" class="btn-login">Sobre</a>
     </div>
 
-    <!-- Seção principal da página -->
-    <div class="content-container">
-        <!-- Gráficos -->
-        <div>
-            <h2>Estatísticas</h2>
-            <div class="chart-container">
-                <canvas id="weightChart" width="300" height="150"></canvas>
-            </div>
-            <div class="chart-container">
-                <canvas id="waterChart" width="300" height="150"></canvas>
-            </div>
-        </div>
+    <h1>Estatísticas</h1>
+    <div class="chart-container">
+        <canvas id="weightChart" width="300" height="150"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="waterChart" width="300" height="150"></canvas>
+    </div>
 
-        <!-- Filtros e Planos -->
-        <div class="filter-container">
-            <label for="weightPercentage">Escolha a meta de peso:</label>
-            <select id="weightPercentage">
-                <option value="70">Redução para 70% do Peso Atual</option>
-                <option value="80">Redução para 80% do Peso Atual</option>
-                <option value="110">Aumento para 110% do Peso Atual</option>
-                <option value="120">Aumento para 120% do Peso Atual</option>
-            </select>
-
-            <div id="planDetails" class="plan-container">
-                <!-- Os planos serão exibidos aqui com base na seleção -->
-            </div>
-        </div>
+    <div class="goal-container">
+        <button id="set-goal-button">Definir Meta</button>
+        <div id="goal-display"></div>
     </div>
 
     <footer>
@@ -103,62 +47,7 @@
         <p>Estatísticas e Metas</p>
     </footer>
 
-    <!-- Bibliotecas e scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="scriptEstatisticas.js"></script>
-    <script>
-        // Informações dos planos
-        const plans = {
-            "70": {
-                title: "Plano 1: Redução para 70% do Peso Atual",
-                objective: "Perda significativa de peso (30%)",
-                strategy: "Déficit calórico moderado, foco em exercícios aeróbicos e treino de resistência para preservar massa muscular.",
-                workouts: "Segunda a Sábado: 30 min de aeróbico intenso (corrida, HIIT ou bicicleta). Treino de resistência com pesos moderados – 3 séries de 10-12 repetições. Domingo: Caminhada leve ou yoga.",
-                meals: "Café da manhã: Omelete + pão integral + abacate. Lanche: maçã + castanhas. Almoço: frango grelhado + quinoa + salada. Lanche: iogurte com chia. Jantar: salmão grelhado + legumes."
-            },
-            "80": {
-                title: "Plano 2: Redução para 80% do Peso Atual",
-                objective: "Perda moderada de peso (20%)",
-                strategy: "Déficit calórico leve, exercícios combinando resistência e aeróbico.",
-                workouts: "Segunda a Sexta: 20 min de aeróbico moderado. Treino de resistência com pesos leves a moderados. Sábado: Caminhada de 40 minutos. Domingo: Descanso total.",
-                meals: "Café da manhã: Mingau de aveia com frutas. Lanche: banana + amêndoas. Almoço: frango grelhado + arroz integral + salada. Lanche: barra de proteína. Jantar: omelete com espinafre."
-            },
-            "110": {
-                title: "Plano 3: Aumento para 110% do Peso Atual",
-                objective: "Ganho moderado de peso (10%)",
-                strategy: "Superávit calórico leve, foco em treinos de hipertrofia muscular.",
-                workouts: "Segunda a Sexta: Treino de resistência com pesos pesados. Exercícios compostos: agachamento, levantamento terra. Sábado: Cardio leve. Domingo: Descanso.",
-                meals: "Café da manhã: Pão integral com pasta de amendoim + shake de proteína. Lanche: iogurte com granola. Almoço: carne vermelha + batata-doce. Jantar: massa integral com frango."
-            },
-            "120": {
-                title: "Plano 4: Aumento para 120% do Peso Atual",
-                objective: "Ganho significativo de peso (20%)",
-                strategy: "Superávit calórico elevado, foco em treinos de força.",
-                workouts: "Segunda a Sábado: Treino de força com pesos pesados. Cardio leve 3x na semana. Domingo: Descanso.",
-                meals: "Café da manhã: Ovos mexidos com abacate + torradas. Lanche: batida proteica. Almoço: carne vermelha + arroz integral. Lanche: pão integral com queijo. Jantar: peito de frango + massa integral."
-            }
-        };
-
-        // Função para atualizar o plano conforme a porcentagem selecionada
-        document.getElementById('weightPercentage').addEventListener('change', (event) => {
-            const selectedPlan = plans[event.target.value];
-            const planContainer = document.getElementById('planDetails');
-            
-            if (selectedPlan) {
-                planContainer.innerHTML = `
-                    <div class="plan">
-                        <h2>${selectedPlan.title}</h2>
-                        <p><strong>Objetivo:</strong> ${selectedPlan.objective}</p>
-                        <p><strong>Estratégia:</strong> ${selectedPlan.strategy}</p>
-                        <p><strong>Treinos:</strong> ${selectedPlan.workouts}</p>
-                        <p><strong>Refeições:</strong> ${selectedPlan.meals}</p>
-                    </div>
-                `;
-            }
-        });
-
-        // Carregar o primeiro plano automaticamente ao carregar a página
-        document.getElementById('weightPercentage').dispatchEvent(new Event('change'));
-    </script>
 </body>
 </html>
