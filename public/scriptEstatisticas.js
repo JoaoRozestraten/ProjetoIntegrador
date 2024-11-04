@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+//ver 0001
+document.addEventListener('DOMContentLoaded', () => { //CONTROLE DE VER (ERROS meta e display)
     const weightCtx = document.getElementById('weightChart').getContext('2d');
     const waterCtx = document.getElementById('waterChart').getContext('2d');
     const setGoalButton = document.getElementById('set-goal-button');
@@ -7,7 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressMessage = document.createElement('div');
     progressMessage.id = 'progress-message';
     progressMessage.classList.add('goal-text');
-    document.body.appendChild(progressMessage); // Adiciona a mensagem abaixo dos gráficos
+    document.body.appendChild(progressMessage);
+
+    const plans = {
+        A1: "Plano para ganhar peso até o intervalo [60, 70] kg",
+        A2: "Plano para perder peso até o intervalo [60, 70] kg",
+        B1: "Plano para ganhar peso até o intervalo [71, 80] kg",
+        B2: "Plano para perder peso até o intervalo [71, 80] kg",
+        C1: "Plano para ganhar peso até o intervalo [81, 90] kg",
+        C2: "Plano para perder peso até o intervalo [81, 90] kg",
+        D1: "Plano para ganhar peso até o intervalo [91, 100] kg",
+        D2: "Plano para perder peso até o intervalo [91, 100] kg",
+    };
 
     function displayGoal(data) {
         if (data && data.goal) {
@@ -15,21 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
             checkProgress(data.goal);
         } else {
             goalDisplay.innerHTML = '';
-            progressMessage.textContent = '';  // Limpa mensagem de progresso
+            progressMessage.textContent = '';
         }
     }
+    
 
-    // Função para verificar o progresso em relação à meta
     function checkProgress(goalWeight) {
         fetch('/history')
             .then(response => response.json())
             .then(history => {
-                if (history.length < 2) {
-                    progressMessage.textContent = "Não há dados suficientes para avaliar a meta.";
+                if (history.length === 0) {
+                    progressMessage.textContent = "Nenhum dado de histórico encontrado para avaliar a meta.";
                     return;
                 }
+    
                 const currentWeight = history[history.length - 1].weight;
-
+                const previousWeight = history.length > 1 ? history[history.length - 2].weight : currentWeight;
+                let plan = '';
+    
                 if (currentWeight <= goalWeight) {
                     progressMessage.textContent = "Parabéns! Você atingiu a meta!";
                     progressMessage.style.color = "green";
@@ -37,9 +52,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     progressMessage.textContent = "Ainda não atingiu a meta, continue tentando!";
                     progressMessage.style.color = "red";
                 }
+    
+                // Seleciona o plano recomendado com base na meta específica
+                if (goalWeight >= 60 && goalWeight <= 70) {
+                    plan = previousWeight < goalWeight ? 'A1' : 'A2';
+                } else if (goalWeight >= 71 && goalWeight <= 80) {
+                    plan = previousWeight < goalWeight ? 'B1' : 'B2';
+                } else if (goalWeight >= 81 && goalWeight <= 90) {
+                    plan = previousWeight < goalWeight ? 'C1' : 'C2';
+                } else if (goalWeight >= 91 && goalWeight <= 100) {
+                    plan = previousWeight < goalWeight ? 'D1' : 'D2';
+                }
+    
+                if (plan) {
+                    const planMessage = `Plano recomendado: ${plans[plan]}`;
+                    goalDisplay.innerHTML += `<div class="goal-text">${planMessage}</div>`;
+                }
             })
             .catch(error => console.error("Erro ao verificar progresso:", error));
     }
+    
 
     function loadHistory() {
         fetch('/history')
@@ -123,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setGoalButton.addEventListener('click', () => {
         const goalWeight = parseFloat(prompt("Digite sua meta de peso (entre 60 e 100 kg):"));
-
+    
         if (goalWeight && goalWeight >= 60 && goalWeight <= 100) {
             fetch('/set-goal', {
                 method: 'POST',
@@ -131,12 +163,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({ goal: goalWeight }),
             })
             .then(response => response.json())
-            .then(displayGoal)
+            .then(data => {
+                if (data.success) {
+                    // Atualiza diretamente o conteúdo de goalDisplay
+                    goalDisplay.innerHTML = `<h2>Meta Selecionada: ${goalWeight} kg</h2>`;
+                    displayGoal({ goal: goalWeight });
+                } else {
+                    alert("Erro ao definir meta. Tente novamente.");
+                }
+            })
             .catch(error => console.error("Erro ao definir a meta:", error));
         } else {
             alert("Peso inválido! Insira um valor entre 60 e 100 kg.");
         }
     });
+    
 
     loadHistory();
 });
