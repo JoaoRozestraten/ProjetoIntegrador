@@ -1,4 +1,4 @@
-//ver 0001
+//ver 0001 0002
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
@@ -32,18 +32,20 @@ app.get('/', (req, res) => {
 });
 
 // Rota para registrar novos usuários
-app.post('/register', async (req, res) => {
-    const { username, password } = req.body;
-    const userExists = users.find(user => user.username === username);
+app.post('/set-goal', (req, res) => {
+    if (!req.session.username) return res.status(403).json({ message: 'Faça login.' });
 
-    if (userExists) {
-        return res.json({ success: false, message: 'Nome de usuário já está em uso. Tente outro.' });
+    const { goal } = req.body;
+    const user = users.find(user => user.username === req.session.username);
+
+    if (user) {
+        user.goal = goal;  // Meta agora aceita qualquer valor específico
+        res.json({ success: true, goal });
+    } else {
+        res.status(404).json({ message: 'Usuário não encontrado.' });
     }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-    users.push({ username, password: hashedPassword, history: [] }); // Adiciona um histórico vazio
-    res.json({ success: true, message: 'Registro concluído! Você já pode fazer login.' });
 });
+
 
 // Rota de login
 app.post('/login', async (req, res) => {
