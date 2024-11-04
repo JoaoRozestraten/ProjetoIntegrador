@@ -1,3 +1,4 @@
+//ver 0001
 document.addEventListener('DOMContentLoaded', () => { //CONTROLE DE VER (ERROS meta e display)
     const weightCtx = document.getElementById('weightChart').getContext('2d');
     const waterCtx = document.getElementById('waterChart').getContext('2d');
@@ -29,20 +30,21 @@ document.addEventListener('DOMContentLoaded', () => { //CONTROLE DE VER (ERROS m
             progressMessage.textContent = '';
         }
     }
+    
 
     function checkProgress(goalWeight) {
         fetch('/history')
             .then(response => response.json())
             .then(history => {
-                if (history.length < 2) {
-                    progressMessage.textContent = "Não há dados suficientes para avaliar a meta.";
+                if (history.length === 0) {
+                    progressMessage.textContent = "Nenhum dado de histórico encontrado para avaliar a meta.";
                     return;
                 }
-
+    
                 const currentWeight = history[history.length - 1].weight;
-                const previousWeight = history[history.length - 2].weight;
+                const previousWeight = history.length > 1 ? history[history.length - 2].weight : currentWeight;
                 let plan = '';
-
+    
                 if (currentWeight <= goalWeight) {
                     progressMessage.textContent = "Parabéns! Você atingiu a meta!";
                     progressMessage.style.color = "green";
@@ -50,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => { //CONTROLE DE VER (ERROS m
                     progressMessage.textContent = "Ainda não atingiu a meta, continue tentando!";
                     progressMessage.style.color = "red";
                 }
-
+    
+                // Seleciona o plano recomendado com base na meta específica
                 if (goalWeight >= 60 && goalWeight <= 70) {
                     plan = previousWeight < goalWeight ? 'A1' : 'A2';
                 } else if (goalWeight >= 71 && goalWeight <= 80) {
@@ -60,15 +63,15 @@ document.addEventListener('DOMContentLoaded', () => { //CONTROLE DE VER (ERROS m
                 } else if (goalWeight >= 91 && goalWeight <= 100) {
                     plan = previousWeight < goalWeight ? 'D1' : 'D2';
                 }
-
+    
                 if (plan) {
                     const planMessage = `Plano recomendado: ${plans[plan]}`;
                     goalDisplay.innerHTML += `<div class="goal-text">${planMessage}</div>`;
                 }
-                
             })
             .catch(error => console.error("Erro ao verificar progresso:", error));
     }
+    
 
     function loadHistory() {
         fetch('/history')
