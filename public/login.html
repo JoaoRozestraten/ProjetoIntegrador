@@ -7,22 +7,34 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <form id="loginForm">
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        
-        <button type="submit">Entrar</button>
-    </form>
+    <div class="header">
+        <h1>Login</h1>
+    </div>
+    <div class="wrapper">
+        <form id="loginForm">
+            <div id="nomin">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required><br><br>
+            </div>
+            <div id="LaSenha">
+                <label for="password" id="passlabel">Senha:</label>
+                <input type="password" id="password" name="password" required><br><br>
+            </div>
+            <div id="butobery">
+                <button type="submit">Entrar</button>
+            </div>
+        </form>
+    </div>
+    <p></p>
 
     <!-- Div para exibir a mensagem de erro ou sucesso -->
     <div id="message"></div>
-    <a href="register.html" class= "btn-login">Voltar para Registar</a>
+    <div id="botao">
+        <p></p>
+        <a href="register.html" class= "btn-login">Voltar para Registar</a>
+    </div>    
 
-        <script>
+    <script>
     document.getElementById('loginForm').addEventListener('submit', async function(event) {
         event.preventDefault(); // Impede o comportamento padrão do formulário
         

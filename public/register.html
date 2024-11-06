@@ -35,15 +35,28 @@
   </script>
 </head>
 <body>
-  <h1>Registrar</h1>
-  <form onsubmit="registerUser(event)">
-    <label for="username">Nome de Usuário:</label>
-    <input type="text" id="username" name="username" required><br>
-    <label for="password">Senha:</label>
-    <input type="password" id="password" name="password" required><br>
-    <button type="submit">Registrar</button>
-  </form>
+  <div class="header">
+    <h1>Registrar</h1>
+  </div>
+  <div class="leform">
+    <form onsubmit="registerUser(event)">
+      <div id="nomin">
+        <label for="username">Nome:</label>
+        <input type="text" id="username" name="username" required><br>
+      </div>
+      <p></p>
+      <div id="LaSenha">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required><br>
+      </div>
+      <div id="butobery">
+        <button type="submit">Registrar</button>
+      </div>
+    </form>
+  </div>
   <div id="registermen"></div> <!-- Onde a mensagem será exibida -->
-  <a href="login.html" class= "btn-login">Login</a>
+  <div id="botao">
+    <a href="login.html" class= "btn-login">Ir para o Login</a>
+  </div>
 </body>
 </html>

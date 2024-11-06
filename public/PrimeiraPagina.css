@@ -1,38 +1,38 @@
     /* Estilo para o botão de login */
     .btn-login {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #4CAF50; /* Cor do botão (verde) */
-        color: white; /* Cor do texto */
-        text-decoration: none; /* Remove o sublinhado do link */
-        border-radius: 5px; /* Bordas arredondadas */
-        font-size: 16px; /* Tamanho da fonte */
-        cursor: pointer; /* Mostra o cursor de "mãozinha" ao passar por cima */
-      }
-      
-      /* Efeito ao passar o mouse */
-      .btn-login:hover {
-        background-color: #45a049; /* Cor ao passar o mouse por cima */
-      }
-      body {
-        background-color: white;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        height: 100vh;
-        background-image: linear-gradient( 115deg, #1c6a42, #207248 1%, #237048 11%, #1d5b3b 15%, #000 23.57%, transparent 23.57%, transparent 100%),
-        linear-gradient( 115deg, transparent, #1c6a42 23.57%, #1c6a42 41%, #000 45%, transparent 45%, transparent 100%),
-        linear-gradient( 115deg, transparent, #207248 45%, #207248 50%, #0e6b3b 52%, #000 55%, transparent 45%, transparent 100%),
-        linear-gradient( 115deg, transparent, #237048 55%, #266343, #237048 68%, #000 73%, transparent 73%, transparent 100%),
-        linear-gradient( 115deg, transparent, #237048 73%, #1d5b3b, #195033 100%);
-      }
-      #header {
-        text-align: center;
-        color: aliceblue;
-        background-color: #45a049;
-        background-image: linear-gradient(180deg,green, rgb(1, 113, 1), rgb(0, 91, 0), rgb(0, 75, 0), rgb(0, 55, 0));
-        padding: 20px;
-      }
-      #button {
-        text-align: center;
-      }
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50; /* Cor do botão (verde) */
+      color: white; /* Cor do texto */
+      text-decoration: none; /* Remove o sublinhado do link */
+      border-radius: 5px; /* Bordas arredondadas */
+      font-size: 16px; /* Tamanho da fonte */
+      cursor: pointer; /* Mostra o cursor de "mãozinha" ao passar por cima */
+    }
+    
+    /* Efeito ao passar o mouse */
+    .btn-login:hover {
+      background-color: #45a049; /* Cor ao passar o mouse por cima */
+    }
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      background-image: linear-gradient( 115deg, #1c6a42, #207248 1%, #237048 11%, #1d5b3b 15%, #000 23.57%, transparent 23.57%, transparent 100%),
+      linear-gradient( 115deg, transparent, #1c6a42 23.57%, #1c6a42 41%, #000 45%, transparent 45%, transparent 100%),
+      linear-gradient( 115deg, transparent, #207248 45%, #207248 50%, #0e6b3b 52%, #000 55%, transparent 45%, transparent 100%),
+      linear-gradient( 115deg, transparent, #237048 55%, #266343, #237048 68%, #000 73%, transparent 73%, transparent 100%),
+      linear-gradient( 115deg, transparent, #237048 73%, #1d5b3b, #195033 100%);
+    }
+    #header {
+      text-align: center;
+      color: aliceblue;
+      background-color: #45a049;
+      background-image: linear-gradient(180deg,green, rgb(1, 113, 1), rgb(0, 91, 0), rgb(0, 75, 0), rgb(0, 55, 0));
+      padding: 20px;
+    }
+    #button {
+      text-align: center;
+    }
