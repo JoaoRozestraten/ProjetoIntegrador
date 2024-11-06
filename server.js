@@ -1,3 +1,4 @@
+//ver 0001
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
@@ -81,16 +82,13 @@ app.post('/set-goal', (req, res) => {
     const user = users.find(user => user.username === req.session.username);
 
     if (user) {
-        if (goal >= 60 && goal <= 100) {  // Verifica se o peso está dentro do intervalo
-            user.goal = goal;
-            res.json({ success: true, goal });
-        } else {
-            res.status(400).json({ success: false, message: 'Meta fora do intervalo permitido (60 a 100 kg).' });
-        }
+        user.goal = goal;  // Meta agora aceita qualquer valor específico
+        res.json({ success: true, goal });
     } else {
         res.status(404).json({ message: 'Usuário não encontrado.' });
     }
 });
+
 
 
 // Rota para obter a meta atual do usuário
