@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => { //CONTROLE DE VER (ERROS m
     document.body.appendChild(progressMessage);
 
     const plans = {
+
         A1: "Plano para ganhar peso dentro do intervalo [60, 70] kg. Objetivo: Aumentar o peso para a faixa entre 61 e 70 kg com foco em ganho muscular e ingestão calórica elevada.<br><br>"
         + "<strong>Segunda-feira</strong><br>Café da manhã: 3 ovos mexidos com 1/2 abacate (100g), 2 fatias de pão integral, 1 copo de leite integral (250ml).<br>Lanche da manhã: 30g de nozes e 1 banana.<br>Almoço: 150g de peito de frango grelhado, 100g de arroz integral, 100g de batata-doce, salada verde à vontade com azeite.<br>Lanche da tarde: 200g de iogurte natural com 50g de granola.<br>Jantar: 150g de peixe grelhado (ex.: salmão), 100g de quinoa, 100g de legumes cozidos (cenoura, brócolis).<br>Treino: Treino de força para corpo inteiro (exercícios compostos: agachamento, levantamento terra, supino, remada).<br><br>"
         + "<strong>Terça-feira</strong><br>Café da manhã: Mingau de aveia com 60g de aveia, 200ml de leite integral, 1 colher de mel, 1 maçã fatiada.<br>Lanche da manhã: 30g de amêndoas e 1 pera.<br>Almoço: 150g de carne magra (patinho ou alcatra), 100g de macarrão integral, 50g de purê de batata, legumes salteados.<br>Lanche da tarde: 1 shake de proteína (30g de whey protein) com 200ml de leite integral.<br>Jantar: 2 fatias de pizza integral de frango com queijo e vegetais.<br>Treino: Cardio leve (20-30 minutos de caminhada rápida) + alongamento.<br><br>"
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => { //CONTROLE DE VER (ERROS m
     }
     
 
+
     // Seleciona o elemento da caixa de informações
 const planInfoText = document.getElementById('plan-info-text');
 
@@ -139,8 +141,7 @@ function checkProgress(goalWeight) {
 }
 
 
-    
-    
+        
     
     
     
