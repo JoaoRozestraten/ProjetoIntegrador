@@ -85,3 +85,11 @@ button:hover {
   top: 30px;
   left: 685px;
 }
+#registermen {
+  position: relative;
+  top: 150px;
+  left: 50px;
+}
+#title {
+  color: aliceblue;
+}

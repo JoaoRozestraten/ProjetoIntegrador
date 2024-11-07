@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
+    <h1 id="title">Titulo temporário</h1>
     <div class="header">
         <h1>Login</h1>
     </div>
@@ -23,12 +24,12 @@
             <div id="butobery">
                 <button type="submit">Entrar</button>
             </div>
+            <!-- Div para exibir a mensagem de erro ou sucesso -->
+            <div id="message"></div>
         </form>
     </div>
     <p></p>
 
-    <!-- Div para exibir a mensagem de erro ou sucesso -->
-    <div id="message"></div>
     <div id="botao">
         <p></p>
         <a href="register.html" class= "btn-login">Voltar para Registar</a>
@@ -58,7 +59,7 @@
         
         if (result.success) {
             // Mensagem de sucesso
-            messageDiv.style.color = 'green';
+            messageDiv.style.color = 'aqua';
             messageDiv.innerText = result.message;
             // Redireciona para a página qst.html
             window.location.href = result.redirectUrl;
