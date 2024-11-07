@@ -1,17 +1,83 @@
     /* Estilo para o botão de login */
+    body {
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      background-image: linear-gradient( 115deg, #1c6a42, #207248 1%, #237048 11%, #1d5b3b 15%, #000 23.57%, transparent 23.57%, transparent 100%),
+      linear-gradient( 115deg, transparent, #1c6a42 23.57%, #1c6a42 41%, #000 45%, transparent 45%, transparent 100%),
+      linear-gradient( 115deg, transparent, #207248 45%, #207248 50%, #0e6b3b 52%, #000 55%, transparent 45%, transparent 100%),
+      linear-gradient( 115deg, transparent, #237048 55%, #266343, #237048 68%, #000 73%, transparent 73%, transparent 100%),
+      linear-gradient( 115deg, transparent, #237048 73%, #1d5b3b, #195033 100%);
+    }
+
     .btn-login {
         display: inline-block;
         padding: 10px 20px;
         background-color: #4CAF50; /* Cor do botão (verde) */
-        color: white; /* Cor do texto */
+        color: aliceblue; /* Cor do texto */
         text-align: center;
         text-decoration: none; /* Remove o sublinhado do link */
         border-radius: 5px; /* Bordas arredondadas */
         font-size: 16px; /* Tamanho da fonte */
         cursor: pointer; /* Mostra o cursor de "mãozinha" ao passar por cima */
+        transition: .5s;
       }
       
       /* Efeito ao passar o mouse */
       .btn-login:hover {
-        background-color: #45a049; /* Cor ao passar o mouse por cima */
+        background-color: #3b843e; /* Cor ao passar o mouse por cima */
+      }
+      #botao {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+      #nomin {
+        position: relative;
+        top: 110px;
+        left: 75px;
+        color: aliceblue;
+      }
+      #LaSenha {
+        position: relative;
+        top: 110px;
+        left: 83px;
+        color: aliceblue;
+      }
+      #butobery {
+        position: relative;
+        top: 110px;
+        left: 170px;
+      }
+      .header {
+        text-align: center;
+        color: aliceblue;
+      }
+      button {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #4CAF50;
+        color: aliceblue;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: .5s;
+      }
+      button:hover {
+        background-color: #3b843e;
+      }
+      .wrapper {
+        position: relative;
+        width: 400px;
+        height: 340px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .5);
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+        left: 550px;
       }
