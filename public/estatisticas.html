@@ -18,6 +18,19 @@
             color: red;
             font-size: 1.2em;
         }
+        /* Caixa de texto lateral para informações do plano */
+        .info-box {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 250px;
+            padding: 10px;
+            background-color: #f3f3f3;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            color: #333;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -27,6 +40,7 @@
     <div id="button">
         <a href="qst.html" class="btn-login">Monitoramento Diário</a>
         <a href="sobre.html" class="btn-login">Sobre</a>
+        <a href="login.html" class="btn-login">Login</a>
     </div>
 
     <h1>Estatísticas</h1>
@@ -40,6 +54,12 @@
     <div class="goal-container">
         <button id="set-goal-button">Definir Meta</button>
         <div id="goal-display"></div>
+    </div>
+
+    <!-- Caixa de informações do plano -->
+    <div class="info-box" id="plan-info-box">
+        <h3>Informações do Plano</h3>
+        <p id="plan-info-text">Selecione uma meta para ver o plano correspondente.</p>
     </div>
 
     <footer>
