@@ -29,11 +29,18 @@ h2 {
 }
 #Text-Form {
     position: relative;
-    left: 660px;
+    left: 645px;
 }
 #contact-form {
     position: relative;
-    left: 520px;
+    width: 500px;
+    height: 240px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    left: 480px;
 }
 .Manda {
     position: relative;
@@ -41,10 +48,37 @@ h2 {
 }
 #message {
     position: relative;
-    top: 20px;
+    top: 15px;
+    left: 34px;
+    height: 100px;
+    width: 70%;
 }
-#buto {
+#botao {
     position: relative;
-    top: 30px;
-    left: 220px;
+    top: 32px;
+    left: 130px;
+    width: 50%;
+    height: 40px;
+    background: #173c24;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+#Mensagem {
+    position: relative;
+    left: 31px;
+    bottom: 73px;
+}
+.mail {
+    position: relative;
+    left: 260px;
+}
+.nomin {
+    position: relative;
+    left: 30px;
+    top: 20px;
 }
