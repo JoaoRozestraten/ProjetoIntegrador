@@ -1,9 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: linear-gradient(150deg, #237048,#205b3c);
+    background-image: linear-gradient(150deg, aliceblue, azure);
     margin: 0;
     padding: 0;
-    height: 180vh;
+    height: 120vh;
     color: black;
 }
 #header {
@@ -15,17 +15,18 @@ body {
 }
 #button {
     position: relative;
-    left: 550px;
+    display: flex;
+    justify-content: center;
 }
 .btn-login {
-    color: mediumseagreen;
+    color: lime;
     text-decoration: none;
 }
 a {
     color: black;
 }
 h2 {
-    color: mediumspringgreen;
+    color: mediumseagreen;
 }
 #Text-Form {
     position: relative;
@@ -59,7 +60,7 @@ h2 {
     left: 130px;
     width: 50%;
     height: 40px;
-    background: #173c24;
+    background: #069437;
     border: none;
     outline: none;
     border-radius: 6px;
@@ -75,10 +76,10 @@ h2 {
 }
 .mail {
     position: relative;
-    left: 260px;
+    left: 250px;
 }
 .nomin {
     position: relative;
-    left: 30px;
+    left: 20px;
     top: 20px;
 }

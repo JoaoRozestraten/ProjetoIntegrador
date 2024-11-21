@@ -26,7 +26,8 @@ body {
   border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-  left: 550px;
+  left: 720px;
+  bottom: 10px;
 }
 
 #nomin {
@@ -81,10 +82,11 @@ button:hover {
 }
 
 #botao {
-  position: relative;
-  top: 30px;
-  left: 685px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
+
 #registermen {
   position: relative;
   top: 150px;
