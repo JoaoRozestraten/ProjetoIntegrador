@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrar</title>
-  <link rel="stylesheet" href="resgister.css">
+  <link rel="stylesheet" href="register.css">
   <script>
     async function registerUser(event) {
       event.preventDefault(); // Prevenir o comportamento padrão do formulário
@@ -25,7 +25,7 @@
       // Atualiza o DOM com base na resposta
       const messageElement = document.getElementById('registermen');
       if (result.success) {
-        messageElement.style.color = 'green';
+        messageElement.style.color = 'aqua';
         messageElement.innerHTML = result.message;
       } else {
         messageElement.style.color = 'red';
@@ -35,6 +35,7 @@
   </script>
 </head>
 <body>
+  <h1 id="title">FitLife Hub</h1>
   <div class="header">
     <h1>Registrar</h1>
   </div>
@@ -52,11 +53,11 @@
       <div id="butobery">
         <button type="submit">Registrar</button>
       </div>
+      <div id="registermen"></div> <!-- Onde a mensagem será exibida -->
     </form>
-  </div>
-  <div id="registermen"></div> <!-- Onde a mensagem será exibida -->
-  <div id="botao">
-    <a href="login.html" class= "btn-login">Ir para o Login</a>
+    <div id="botao">
+      <a href="login.html" class= "btn-login">Ir para o Login</a>
+    </div>
   </div>
 </body>
 </html>

@@ -18,7 +18,7 @@ body {
 }
 
 .leform {
-  position: relative;
+  position: absolute;
   width: 400px;
   height: 340px;
   background: transparent;
@@ -26,7 +26,9 @@ body {
   border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-  left: 550px;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
 }
 
 #nomin {
@@ -46,7 +48,8 @@ body {
 #butobery {
   position: relative;
   top: 120px;
-  left: 160px;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-login {
@@ -81,7 +84,17 @@ button:hover {
 }
 
 #botao {
+  justify-content: center;
+  display: flex;
   position: relative;
-  top: 30px;
-  left: 685px;
+  top: 140px;
+}
+
+#registermen {
+  position: relative;
+  top: 130px;
+  left: 50px;
+}
+#title {
+  color: aliceblue;
 }

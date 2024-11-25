@@ -1,68 +1,85 @@
-/* CSS basico bugado
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-image: linear-gradient(150deg, aliceblue, azure);
+    margin: 0;
+    padding: 0;
+    height: 120vh;
+    color: black;
+}
+#header {
+    text-align: center;
+    background-color: green;
+    padding: 8px;
+    background-image: linear-gradient(100deg,rgb(86, 168, 86),rgb(66, 159, 66));
+    color: rgb(48, 50, 48);
+}
+#button {
+    position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-image: linear-gradient( 109deg, transparent, #2d8427 23.57%, #205a06 41%, #2d8427 45%, transparent 45%, transparent 100%)
-  }
-header {
-    background: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
 }
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.btn-login {
+    color: lime;
+    text-decoration: none;
 }
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+a {
+    color: black;
 }
-form input, form textarea {
-    width: 93%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-h1, h2 {
-    color: #333;
+h2 {
+    color: mediumseagreen;
 }
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    margin: 10px 0;
-}
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: white;
+#Text-Form {
     position: relative;
-    bottom: 0;
-    width: 100%;
+    left: 645px;
 }
-
-
-*/
+#contact-form {
+    position: relative;
+    width: 500px;
+    height: 240px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    left: 480px;
+}
+.Manda {
+    position: relative;
+    right: 3px;
+}
+#message {
+    position: relative;
+    top: 15px;
+    left: 34px;
+    height: 100px;
+    width: 70%;
+}
+#botao {
+    position: relative;
+    top: 32px;
+    left: 130px;
+    width: 50%;
+    height: 40px;
+    background: #069437;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+#Mensagem {
+    position: relative;
+    left: 31px;
+    bottom: 73px;
+}
+.mail {
+    position: relative;
+    left: 250px;
+}
+.nomin {
+    position: relative;
+    left: 20px;
+    top: 20px;
+}
