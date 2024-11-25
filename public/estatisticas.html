@@ -4,51 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estatísticas - Saúde e Fitness</title>
-    <style>
-        .chart-container {
-            width: 300px;
-            margin: 0 auto;
-            display: inline-block;
-        }
-        .goal-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .goal-text {
-            color: red;
-            font-size: 1.2em;
-        }
-        /* Caixa de texto lateral para informações do plano */
-        .info-box {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            width: 250px;
-            padding: 10px;
-            background-color: #f3f3f3;
-            border: 1px solid #ccc;
-            font-size: 1em;
-            color: #333;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="estatistica.css">
 </head>
 <body>
     <div id="header">
         <h1>Estatísticas e Metas</h1>
     </div>
+    <p></p>
     <div id="button">
-        <a href="qst.html" class="btn-login">Monitoramento Diário</a>
-        <a href="sobre.html" class="btn-login">Sobre</a>
-        <a href="login.html" class="btn-login">Login</a>
+        <a href="qst.html" class="btn">Monitoramento Diário</a>
+        <a>|</a>
+        <a href="sobre.html" class="btn">Sobre</a>
+        <a>|</a>
+        <a href="login.html" class="btn">Login</a>
     </div>
 
     <h1>Estatísticas</h1>
     <div class="chart-container">
-        <canvas id="weightChart" width="300" height="150"></canvas>
+        <canvas id="weightChart" width="600" height="450"></canvas>
     </div>
     <div class="chart-container">
-        <canvas id="waterChart" width="300" height="150"></canvas>
+        <canvas id="waterChart" width="600" height="450"></canvas>
     </div>
 
     <div class="goal-container">
@@ -63,8 +39,7 @@
     </div>
 
     <footer>
-        <p>2024 Nome do Site</p>
-        <p>Estatísticas e Metas</p>
+        <a>2024 FitLife Hub Estatísticas e Metas</a>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
