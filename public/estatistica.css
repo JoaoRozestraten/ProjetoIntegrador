@@ -21,7 +21,7 @@ body {
 /* Caixa de texto lateral para informações do plano */
 .info-box {
   position: absolute;
-  right: 1%;
+  right: 10%;
   top: 20%;
   width: 250px;
   padding: 10px;

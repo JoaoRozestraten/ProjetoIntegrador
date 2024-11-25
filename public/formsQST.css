@@ -81,7 +81,13 @@ button:hover {
 .btn {
     color: lime;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 #espaco {
     color: white;
+}
+footer {
+    display: flex;
+    justify-content: center;
 }
