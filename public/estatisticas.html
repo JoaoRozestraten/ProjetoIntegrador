@@ -4,37 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estatísticas - Saúde e Fitness</title>
-    <style>
-        .chart-container {
-            width: 300px;
-            margin: 0 auto;
-            display: inline-block;
-        }
-        .goal-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .goal-text {
-            color: red;
-            font-size: 1.2em;
-        }
-    </style>
+    <link rel="stylesheet" href="estatistica.css">
 </head>
 <body>
     <div id="header">
         <h1>Estatísticas e Metas</h1>
     </div>
+    <p></p>
     <div id="button">
-        <a href="qst.html" class="btn-login">Monitoramento Diário</a>
-        <a href="sobre.html" class="btn-login">Sobre</a>
+        <a href="qst.html" class="btn">Monitoramento Diário</a>
+        <a>|</a>
+        <a href="sobre.html" class="btn">Sobre</a>
+        <a>|</a>
+        <a href="login.html" class="btn">Login</a>
     </div>
 
     <h1>Estatísticas</h1>
     <div class="chart-container">
-        <canvas id="weightChart" width="300" height="150"></canvas>
+        <canvas id="weightChart" width="600" height="450"></canvas>
     </div>
     <div class="chart-container">
-        <canvas id="waterChart" width="300" height="150"></canvas>
+        <canvas id="waterChart" width="600" height="450"></canvas>
     </div>
 
     <div class="goal-container">
@@ -42,9 +32,14 @@
         <div id="goal-display"></div>
     </div>
 
+    <!-- Caixa de informações do plano -->
+    <div class="info-box" id="plan-info-box">
+        <h3>Informações do Plano</h3>
+        <p id="plan-info-text">Selecione uma meta para ver o plano correspondente.</p>
+    </div>
+
     <footer>
-        <p>2024 Nome do Site</p>
-        <p>Estatísticas e Metas</p>
+        <a>2024 FitLife Hub Estatísticas e Metas</a>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

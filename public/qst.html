@@ -8,8 +8,11 @@
 </head>
 <body>
     <div id="button">
-    <a href="estatisticas.html" class="btn-login">Estatisticas e Metas</a>
-        <a href="sobre.html" class="btn-login">Sobre</a>
+        <a href="estatisticas.html" class="btn">Estatisticas e Metas</a>
+        <a id="espaco">|</a>
+        <a href="sobre.html" class="btn">Sobre</a>
+        <a id="espaco">|</a>
+        <a href="login.html" class= "btn">Login</a>
     </div>
     <div class="container">
         <h1>Monitoramento Diário</h1>
@@ -19,19 +22,19 @@
             <h2>Atualize suas informações</h2>
             <form id="questionnaire-form">
                 <label for="weight">Peso (kg):</label>
-                <input type="number" id="weight" name="weight" required>
-
+                <input type="number" id="weight" name="weight" required min="40" max="500">
+            
                 <label for="height">Altura (cm):</label>
-                <input type="number" id="height" name="height" required>
-
+                <input type="number" id="height" name="height" required min="50" max="400">
+            
                 <label for="waist">Medida da Cintura (cm):</label>
-                <input type="number" id="waist" name="waist" required>
-
+                <input type="number" id="waist" name="waist" required min="40" max="120">
+            
                 <label for="water">Água Bebida (litros):</label>
-                <input type="number" step="0.1" id="water" name="water" required>
-
+                <input type="number" step="0.1" id="water" name="water" required min="0" max="15">
+            
                 <button type="submit">Salvar</button>
-            </form>
+            </form>            
         </div>
         <!-- Seção onde aparecerão os dados salvos -->
         <div class="data-display">
@@ -43,8 +46,7 @@
         </div>
     </div>
     <footer>
-        <p> 2024 Nome do Site</p>
-        <p> Monitoramento Diario</p>
+        <a> 2024 FitLife Hub Monitoramento Diario</a>
     </footer>
     <script src="script1.js"></script>
 </body>

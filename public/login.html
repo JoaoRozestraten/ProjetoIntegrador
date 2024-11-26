@@ -7,22 +7,33 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <form id="loginForm">
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        
-        <button type="submit">Entrar</button>
-    </form>
+    <h1 id="title">FitLife Hub</h1>
+    <div class="header">
+        <h1>Login</h1>
+    </div>
+    <div class="wrapper">
+        <form id="loginForm">
+            <div id="nomin">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required><br><br>
+            </div>
+            <div id="LaSenha">
+                <label for="password" id="passlabel">Senha:</label>
+                <input type="password" id="password" name="password" required><br><br>
+            </div>
+            <div id="butobery">
+                <button type="submit">Entrar</button>
+            </div>
+            <!-- Div para exibir a mensagem de erro ou sucesso -->
+            <div id="message"></div>
+        </form>
+        <div id="botao">
+            <a href="register.html" class= "btn-login">Voltar para Registar</a>
+        </div>
+    </div>
+    <p></p>
 
-    <!-- Div para exibir a mensagem de erro ou sucesso -->
-    <div id="message"></div>
-    <a href="register.html" class= "btn-login">Voltar para Registar</a>
-
-        <script>
+    <script>
     document.getElementById('loginForm').addEventListener('submit', async function(event) {
         event.preventDefault(); // Impede o comportamento padrão do formulário
         
@@ -46,7 +57,7 @@
         
         if (result.success) {
             // Mensagem de sucesso
-            messageDiv.style.color = 'green';
+            messageDiv.style.color = 'aqua';
             messageDiv.innerText = result.message;
             // Redireciona para a página qst.html
             window.location.href = result.redirectUrl;
@@ -56,7 +67,6 @@
             messageDiv.innerText = result.message;
         }
     });
-</script>
+    </script>
 </body>
 </html>
-
