@@ -1,30 +1,34 @@
 # ProjetoIntegrador
-Descrição
+Descrição <br>
 Este é um projeto da disciplina de Desenvolvimento Web realizado como parte do trabalho integrador do curso. O objetivo é criar uma aplicação completa que permita aos usuários gerenciar metas relacionadas ao seu peso, altura, consumo de água e outros dados através de um sistema de login e questionários dinâmicos.
 
-Tecnologias Utilizadas
-Backend
-Node.js: Ambiente de execução para JavaScript no servidor.
-Express: Framework minimalista para criação de servidores HTTP.
-bcrypt: Biblioteca para hashing de senhas, garantindo maior segurança.
-body-parser: Middleware para manipulação de dados no formato JSON ou application/x-www-form-urlencoded.
-express-session: Gerenciamento de sessões para autenticação de usuários.
-Frontend
-HTML5, CSS3 e JavaScript: Base para construção de interfaces dinâmicas e responsivas.
+Tecnologias Utilizadas: <br>
+Backend: <br>
+Node.js: Ambiente de execução para JavaScript no servidor. <br>
+Express: Framework minimalista para criação de servidores HTTP. <br>
+bcrypt: Biblioteca para hashing de senhas, garantindo maior segurança. <br>
+body-parser: Middleware para manipulação de dados no formato JSON ou application/x-www-form-urlencoded. <br>
+express-session: Gerenciamento de sessões para autenticação de usuários. <br>
+Frontend: <br>
+HTML5, CSS3 e JavaScript: Base para construção de interfaces dinâmicas e responsivas. <br>
+<br>
+Hospedagem: <br>
+O projeto foi hospedado na Google Cloud Platform (GCP) utilizando uma Máquina Virtual (VM) configurada para suportar o ambiente de execução Node.js. <br>
+<br>
 
-Hospedagem
-O projeto foi hospedado na Google Cloud Platform (GCP) utilizando uma Máquina Virtual (VM) configurada para suportar o ambiente de execução Node.js.
-
-Como Funciona a Hospedagem
-A Google Cloud oferece o Compute Engine, um serviço que permite criar e gerenciar máquinas virtuais escaláveis para hospedar aplicações. No nosso caso, configuramos uma máquina virtual que atua como o servidor principal da aplicação.
-
-Integrantes do Grupo
-João Guadagnucci Rozestraten
-Arthur França de Vasconcellos
-Vinicius Batista de Moraes
-Ricardo Augusto Patrício de Azambuja
-
-Link para o GitHub: https://github.com/JoaoRozestraten/ProjetoIntegrador
+Como Funciona a Hospedagem: <br>
+A Google Cloud oferece o Compute Engine, um serviço que permite criar e gerenciar máquinas virtuais escaláveis para hospedar aplicações. No nosso caso, configuramos uma máquina virtual que atua como o servidor principal da aplicação. <br>
+<br>
+Integrantes do Grupo: <br>
+João Guadagnucci Rozestraten <br>
+Arthur França de Vasconcellos <br>
+Vinicius Batista de Moraes <br>
+Ricardo Augusto Patrício de Azambuja <br>
+<br>
+Professor:<br>
+José Matias Lemes Filho <br>
+<br>
+Link para o GitHub: https://github.com/JoaoRozestraten/ProjetoIntegrador <br>
 
 ### TELA INICIAL <br>
 Nela é possível notar 2 botões, um de login, caso já tenha criado um usuário, e o de resistrar, para criar um novo ususário:
@@ -79,7 +83,8 @@ Logo abaixo do texto explicativo do site da página sobre, é possível preenche
 <br>
 
 ### OBSERVAÇÕES: <br>
-Como não está sendo utilizado nenhum banco de dados as informações são armazenadas apenas localmente. Ao clicar no botão login no centro superior das pagina "Sobre","Estatísticas e Metas" ou "Monitoramento Diário" é possível trocar o usuário, apesar das infomações não estarem em um banco de dados os formulários preenchidos estão vinculádos com cada usuário, ou seja, a precistência de dados local permite com que o usuário saia e entre na sua conta sem perder suas informações se a guia de navegação não fechada.
+Como não está sendo utilizado nenhum banco de dados as informações são armazenadas apenas localmente. Ao clicar no botão login no centro superior das pagina "Sobre","Estatísticas e Metas" ou "Monitoramento Diário" é possível trocar o usuário, apesar das infomações não estarem em um banco de dados os formulários preenchidos estão vinculádos com cada usuário, ou seja, a precistência de dados local permite com que o usuário saia e entre na sua conta sem perder suas informações se a guia de navegação não fechada. <br>
+Para rodar o programa localmente só é preciso dar o comando node server.js dentro do diretório correspondente, depois é só copiar e colar o link devolvido no terminal na barra de busca. Esse processo foi utilizado para pegar as telas presentes nesse README.md
 
 
 
