@@ -1,34 +1,35 @@
 # ProjetoIntegrador
-Descrição <br>
+**Descrição**: <br>
 Este é um projeto da disciplina de Desenvolvimento Web realizado como parte do trabalho integrador do curso. O objetivo é criar uma aplicação completa que permita aos usuários gerenciar metas relacionadas ao seu peso, altura, consumo de água e outros dados através de um sistema de login e questionários dinâmicos.
 
-Tecnologias Utilizadas: <br>
-Backend: <br>
+**Tecnologias Utilizadas:** <br>
+**Backend:** <br>
 Node.js: Ambiente de execução para JavaScript no servidor. <br>
 Express: Framework minimalista para criação de servidores HTTP. <br>
 bcrypt: Biblioteca para hashing de senhas, garantindo maior segurança. <br>
 body-parser: Middleware para manipulação de dados no formato JSON ou application/x-www-form-urlencoded. <br>
 express-session: Gerenciamento de sessões para autenticação de usuários. <br>
-Frontend: <br>
+**Frontend:** <br>
 HTML5, CSS3 e JavaScript: Base para construção de interfaces dinâmicas e responsivas. <br>
 <br>
-Hospedagem: <br>
+**Hospedagem:** <br>
 O projeto foi hospedado na Google Cloud Platform (GCP) utilizando uma Máquina Virtual (VM) configurada para suportar o ambiente de execução Node.js. <br>
 <br>
 
-Como Funciona a Hospedagem: <br>
+**Como Funciona a Hospedagem:** <br>
 A Google Cloud oferece o Compute Engine, um serviço que permite criar e gerenciar máquinas virtuais escaláveis para hospedar aplicações. No nosso caso, configuramos uma máquina virtual que atua como o servidor principal da aplicação. <br>
 <br>
-Integrantes do Grupo: <br>
+**Integrantes do Grupo:** <br>
 João Guadagnucci Rozestraten <br>
 Arthur França de Vasconcellos <br>
 Vinicius Batista de Moraes <br>
 Ricardo Augusto Patrício de Azambuja <br>
 <br>
-Professor:<br>
+**Professor:** <br>
 José Matias Lemes Filho <br>
 <br>
-Link para o GitHub: https://github.com/JoaoRozestraten/ProjetoIntegrador <br>
+**Link para o GitHub:** <br>
+https://github.com/JoaoRozestraten/ProjetoIntegrador <br>
 
 ### TELA INICIAL <br>
 Nela é possível notar 2 botões, um de login, caso já tenha criado um usuário, e o de resistrar, para criar um novo ususário:
